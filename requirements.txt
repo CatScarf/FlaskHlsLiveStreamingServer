@@ -1,0 +1,4 @@
+flask
+numpy
+pillow
+ffmpeg-python
