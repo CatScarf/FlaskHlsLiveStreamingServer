@@ -4,25 +4,32 @@ This is a simple python flask hls live streaming server example
 
 ## 1. Quik Start
 
-### 1.1. Installing FFmpeg
+### 1.1. Cloning project
+
+```bash
+$ git clone https://github.com/CatScarf/FlaskHlsLiveStreamingServer.git
+```
+
+### 1.2. Installing FFmpeg
 
 FFmpeg must be installed and accessible via the `$PATH` environment variable.
 
 Browse the "Installing FFmpeg" section of [this page](https://github.com/kkroening/ffmpeg-python)
 
-### 1.2. Installing Python Libraries
+### 1.3. Installing Python Libraries
 
 ```bash
 $ pip install -r requirements.txt
 ```
 
-### 1.3. Running main.py
+### 1.4. Running main.py
 
 ```bash
+$ cd FlaskHlsLiveStreamingServer/
 $ python main.py
 ```
 
-### 1.4 Play live video in the player
+### 1.5 Play live video in the player
 
 You can play the example video in a player that supports the hls protocol by entering the following address
 
