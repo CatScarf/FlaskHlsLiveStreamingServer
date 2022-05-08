@@ -1,6 +1,6 @@
 # Flask HLS Live Streming Server
 
-This is a simple python flask hls live streaming server example
+This is a simple python flask hls live streaming server example.
 
 ## 1. Quik Start
 
@@ -15,7 +15,7 @@ $ git clone https://github.com/CatScarf/FlaskHlsLiveStreamingServer.git
 FFmpeg must be installed. I recommend that you use docker to install.
 
 ```bash
-docker pull jrottenberg/ffmpeg
+$ docker pull jrottenberg/ffmpeg
 ```
 
 And make sure you can run `docker run jrottenberg/ffmpeg` in your terminal. If you have to use `sudo docker`, please add your user to the docker user group.
