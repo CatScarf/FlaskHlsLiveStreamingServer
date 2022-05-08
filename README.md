@@ -12,9 +12,15 @@ $ git clone https://github.com/CatScarf/FlaskHlsLiveStreamingServer.git
 
 ### 1.2. Installing FFmpeg
 
-FFmpeg must be installed and accessible via the `$PATH` environment variable.
+FFmpeg must be installed. I recommend that you use docker to install.
 
-Browse the "Installing FFmpeg" section of [this page](https://github.com/kkroening/ffmpeg-python)
+```bash
+docker pull jrottenberg/ffmpeg
+```
+
+And make sure you can run `docker run jrottenberg/ffmpeg` in your terminal. If you have to use `sudo docker`, please add your user to the docker user group.
+
+If you are using another docker image, please change the parameter `ffmpeg` to `IMAGENAME/ffmpeg` in the init parameter of class M3U8 in `main.py`. If you have installed ffmpeg without docker, please change this parameter to `ffmpeg`. Please note that your ffmpeg must contain the libx264 encoder. This is why I recommend that you use docker. Generally speaking installing ffmpeg without docker is a bit tricky, so I still recommend you use docker.
 
 ### 1.3. Installing Python Libraries
 
@@ -31,11 +37,9 @@ $ python main.py
 
 ### 1.5 Play live video in the player
 
-You can play the example video in a player that supports the hls protocol by entering the following address
+You can directly visit the [http address](http://127.0.0.1:5000/) show in your terminal. This page uses the popular javasccript library [hls.js](https://github.com/video-dev/hls.js/tree/master/demo).
 
-http://127.0.0.1:5000/video/playlist.m3u8
-
-If you have an Apple device, you can also enter this address in Safari. This is because the hls protocol was developed by apple.
+You can also play the example video in a player ([PotPlayer](https://potplayer.daum.net/) or [IINA](https://iina.io/)) that supports the hls protocol by entering the following address [http://127.0.0.1:5000/video/playlist.m3u8](http://127.0.0.1:5000/video/playlist.m3u8). If you have an Apple device, you can also enter this address in [Safari](https://www.apple.com/safari/). This is because the hls protocol was developed by apple.
 
 ## 2. Relevant documents
 
