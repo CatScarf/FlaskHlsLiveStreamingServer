@@ -85,18 +85,21 @@ def delete_video(dir, name):
 def generate_m3u8(start_idx, video_queue, vq_lock, duration):
     # Add header information
     s = f'#EXTM3U\n'
-    s += f'#EXT-X-VERSION:3\n'
+    s += f'#EXT-X-VERSION:7\n'
     s += f'#EXT-X-TARGETDURATION:{ceil(duration)}\n'
     s += f'#EXT-X-MEDIA-SEQUENCE:{start_idx}\n'
+    s += f'#EXT-X-DISCONTINUITY-SEQUENCE:{start_idx}\n'
     temp_queue = queue.Queue()
     
     # Add video name
     vq_lock.acquire()
     while video_queue.qsize() > 0:
         name = video_queue.get()
+        
         s += f'#EXTINF:{float(duration)},\n'
         s += f'{name}\n'
-        s += '#EXT-X-DISCONTINUITY\n'
+        # if video_queue.qsize() != 0:
+        s += '#EXT-X-DISCONTINUITY\n'    
         temp_queue.put(name)
 
         
