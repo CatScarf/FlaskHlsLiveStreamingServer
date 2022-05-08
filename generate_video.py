@@ -126,7 +126,6 @@ def generate_thread(video_queue, vq_lock, old_queue, stop, fps=60, duration=10, 
 
     while stop.qsize() == 0:
         # Generate video and save it
-        # print(f'[generate_thread][{os.getpid()}] idx={idx}, start_idx={start_idx}')
         video_path = generate_example_video(start_time, fps, duration, ffmpeg)
         name = f'{str(idx).zfill(10)}.ts'
         idx += 1
