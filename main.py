@@ -11,7 +11,7 @@ def index():
 @app.route('/video/<string:path>')
 def stream(path):
     directory = './video'
-    return flask.send_from_directory(directory=directory, path=path)
+    return flask.send_from_directory(directory, path)
 
 if __name__ == '__main__':
     m3u8 = M3U8(fps=60, duration=3, max_cache=10, del_old_seconds=180, ffmpeg='jrottenberg/ffmpeg')
